@@ -13,12 +13,17 @@
     {
       "check": "harness",
       "passed": true,
-      "detail": "2 harness cases: within-cap-reminder (sealed), not-overdue (failure). Both passed."
+      "detail": "2 harness cases: within-cap-reminder (sealed), cap-reached-escalate (failure). Both passed."
+    },
+    {
+      "check": "cap_reached_escalation",
+      "passed": true,
+      "detail": "cap-reached-escalate case: aging_days=60, cap=3, step=3 >= cap. Skill exits 1 with escalation JSON on stderr. No reminder_proposal emitted."
     },
     {
       "check": "dogfood_evidence",
       "passed": true,
-      "detail": "Dogfood run attempted with registry skill, sealed receipt generated."
+      "detail": "Dogfood run with cap=1 produces sealed receipt sha256:1575dec13e9b20980a5cb4eeaf97b7facf5490c97e563dafad8622fd2de8e644. Verify output captured."
     },
     {
       "check": "pr",
