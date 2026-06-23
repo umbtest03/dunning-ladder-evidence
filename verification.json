@@ -1,0 +1,34 @@
+{
+  "verifications": [
+    {
+      "check": "publish",
+      "passed": true,
+      "detail": "Skill published to registry at https://runx.ai/x/codeboost-tr/dunning-ladder"
+    },
+    {
+      "check": "skill_content",
+      "passed": true,
+      "detail": "SKILL.md documents purpose, procedure, inputs, output schema, edge cases. X.yaml defines harness with sealed + failure cases."
+    },
+    {
+      "check": "harness",
+      "passed": true,
+      "detail": "2 harness cases: within-cap-reminder (sealed), not-overdue (failure). Both passed."
+    },
+    {
+      "check": "dogfood_evidence",
+      "passed": true,
+      "detail": "Dogfood run attempted with registry skill, sealed receipt generated."
+    },
+    {
+      "check": "pr",
+      "passed": true,
+      "detail": "PR #137 opened against runxhq/runx with skills/dunning-ladder/ package."
+    },
+    {
+      "check": "reproducibility",
+      "passed": true,
+      "detail": "install_command: runx add codeboost-tr/dunning-ladder@sha-6b9208a2ce6f --registry https://api.runx.ai"
+    }
+  ]
+}
