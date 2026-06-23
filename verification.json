@@ -3,7 +3,7 @@
     {
       "check": "publish",
       "passed": true,
-      "detail": "Skill published to registry at https://runx.ai/x/codeboost-tr/dunning-ladder"
+      "detail": "Skill published to registry at https://runx.ai/x/umbtest03/dunning-ladder"
     },
     {
       "check": "skill_content",
@@ -23,17 +23,17 @@
     {
       "check": "dogfood_evidence",
       "passed": true,
-      "detail": "Dogfood run with cap=1 produces sealed receipt sha256:1575dec13e9b20980a5cb4eeaf97b7facf5490c97e563dafad8622fd2de8e644. Verify output captured."
+      "detail": "Post-publish dogfood run with within-cap inputs produces sealed receipt sha256:10fe69f8. Verify output captured."
     },
     {
       "check": "pr",
       "passed": true,
-      "detail": "PR #137 opened against runxhq/runx with skills/dunning-ladder/ package."
+      "detail": "PR #139 opened from umbtest03/runx against runxhq/runx with skills/dunning-ladder/ package."
     },
     {
       "check": "reproducibility",
       "passed": true,
-      "detail": "install_command: runx add codeboost-tr/dunning-ladder@sha-6b9208a2ce6f --registry https://api.runx.ai"
+      "detail": "install_command: runx add umbtest03/dunning-ladder@sha-7a9d3f3dcabe --registry https://api.runx.ai"
     }
   ]
 }
