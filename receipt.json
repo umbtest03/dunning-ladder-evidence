@@ -3,7 +3,7 @@
     {
       "artifact_refs": [],
       "closure": {
-        "closed_at": "2026-06-24T10:14:58.895Z",
+        "closed_at": "2026-06-24T14:33:30.071Z",
         "disposition": "closed",
         "reason_code": "process_exit",
         "summary": "cli-tool exited successfully"
@@ -58,7 +58,7 @@
     "terms": []
   },
   "canonicalization": "runx.receipt.c14n.v1",
-  "created_at": "2026-06-24T10:14:58.895Z",
+  "created_at": "2026-06-24T14:33:30.071Z",
   "decisions": [
     {
       "artifact_refs": [],
@@ -86,8 +86,8 @@
       "selected_harness_ref": null
     }
   ],
-  "digest": "sha256:5cff1d77118a618bee59d5d2a9d91e1af26b86e77c3b6dc72f3d0b7105a9b22a",
-  "id": "sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
+  "digest": "sha256:db08a05d73b24949d66aee00f6959c3d4b0ebfe29cb5df78eabb278b60073543",
+  "id": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
   "idempotency": {
     "content_hash": "sha256:run_dunning_27656b0dd2ee-dunning-content",
     "intent_key": "sha256:run_dunning_27656b0dd2ee-dunning-intent",
@@ -104,7 +104,7 @@
   },
   "schema": "runx.receipt.v1",
   "seal": {
-    "closed_at": "2026-06-24T10:14:58.895Z",
+    "closed_at": "2026-06-24T14:33:30.071Z",
     "criteria": [
       {
         "criterion_id": "process_exit",
@@ -115,14 +115,14 @@
       }
     ],
     "disposition": "closed",
-    "last_observed_at": "2026-06-24T10:14:58.895Z",
+    "last_observed_at": "2026-06-24T14:33:30.071Z",
     "reason_code": "process_closed",
     "summary": "cli-tool dunning completed"
   },
   "signals": [],
   "signature": {
     "alg": "Ed25519",
-    "value": "base64:wWHHGThv6zSbYauvq3EYuFKL42bWJOXOyFpqXo6Pu0GkjRsi5AsqlSplQaWfrch3mpX12lj2Hgw_6toVaNYRBg"
+    "value": "base64:uLAKybauBBjwsScjf6h_Mg2LvIpis0qI8OSaUDUrtPoCp3A5UOoSgjnDUiYueJT_Ni6y-3oVAbSnufK0Q7ApBA"
   },
   "subject": {
     "commitments": [],

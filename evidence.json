@@ -4,36 +4,36 @@
     "Runx CLI version: runx-cli 0.6.13",
     "Publisher owner: umbtest03",
     "Package name: dunning-ladder",
-    "Version: sha-5a9176c1fd75",
+    "Version: sha-b4e9c71520d9",
     "Registry ref: https://runx.ai/x/umbtest03/dunning-ladder",
-    "Public URL: https://runx.ai/x/umbtest03/dunning-ladder@sha-5a9176c1fd75",
+    "Public URL: https://runx.ai/x/umbtest03/dunning-ladder@sha-b4e9c71520d9",
     "PR URL: https://github.com/runxhq/runx/pull/139",
     "Source URL: https://github.com/umbtest03/runx/tree/f0673f6b/skills/dunning-ladder",
     "Raw X.yaml: https://raw.githubusercontent.com/umbtest03/runx/f0673f6b/skills/dunning-ladder/X.yaml",
     "Raw SKILL.md: https://raw.githubusercontent.com/umbtest03/runx/f0673f6b/skills/dunning-ladder/SKILL.md",
     "Publish method: runx registry publish skills/dunning-ladder --profile X.yaml --registry https://api.runx.ai",
-    "Install command: runx add umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai",
+    "Install command: runx add umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai",
     "",
     "=== HARNESS CASES ===",
-    "Case 1: within-cap-reminder — sealed. Input: invoice_status=overdue, aging_days=15, cap=3, step=1. Output: reminder_proposal.channel=email. Chosen step is within cap, reminder sent.",
-    "Case 2: cap-reached-escalate — failure. Input: invoice_status=overdue, aging_days=60, cap=3, step=3. Output: escalation.reason=cadence cap reached. Cap exhausted, skill exits code 1 with escalation on stderr.",
+    "Case 1: within-cap-reminder \u2014 sealed. Input: invoice_status=overdue, aging_days=15, cap=3, step=1. Output: reminder_proposal.channel=email. Chosen step is within cap, reminder sent.",
+    "Case 2: cap-reached-escalate \u2014 failure. Input: invoice_status=overdue, aging_days=60, cap=3, step=3. Output: escalation.reason=cadence cap reached. Cap exhausted, skill exits code 1 with escalation on stderr.",
     "",
     "=== CAP STATE ===",
     "Cap: 3 steps. Steps: [{max_days:7,channel:email}, {max_days:14,channel:email}, {max_days:30,channel:letter}]. Aging 60 days resolves to step 3 (>= cap), triggering escalation.",
     "",
     "=== ESCALATION PATH ===",
-    "step(3) >= cap(3) → decision.action=escalate, reminder_proposal=null, escalation.reason=cadence cap reached, escalation.recommended_action=escalate to collections. Skill exits code 1.",
+    "step(3) >= cap(3) \u2192 decision.action=escalate, reminder_proposal=null, escalation.reason=cadence cap reached, escalation.recommended_action=escalate to collections. Skill exits code 1.",
     "",
     "=== LOCAL HARNESS RESULT ===",
     "Status: passed",
     "Assertion errors: 0",
-    "Receipt IDs: sha256:eb40ab99ac2e85876c21ba2b2550c80c67c90a4379c1151bbafff5d7435febc0 (sealed), sha256:db0e345dc3647a26826a36d56b56038815d320aa6c9899b67b5972e9efa4fb0a (failure)",
+    "Receipt IDs: sha256:b245d17a31a0c115775b78461ce0e7fc23a50d35b40e90dd4dbe5717e01f6995 (sealed), sha256:154d4a6d2bcb8fedb04c2c6c580fa97b4f5fc81d21d8d67a11f007f751ef79de (failure)",
     "",
     "=== DOGFOOD (POST-PUBLISH) ===",
-    "Command: runx skill umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy=...",
+    "Command: runx skill umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy='...'",
     "Status: sealed (exit 0)",
-    "Reminder channel: email, Content digest: sha256:f455f54584e797774955ecbff8c546b5bddf1e986032ff18a915753942088d9e",
-    "Receipt ID: sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
+    "Reminder channel: email, Content digest: sha256:5774e0aa33b0ba5528b692b5a3c39e179a43ba3721e9d4490daa237761789239",
+    "Receipt ID: sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
     "",
     "=== VERIFIER CHECKS ===",
     "github.repo_starred_by: umbtest03 has starred runxhq/runx (verified via GitHub API)",
@@ -43,30 +43,43 @@
     "Skill named dunning-ladder (exact required name)"
   ],
   "dogfood": {
-    "package": "umbtest03/dunning-ladder@sha-5a9176c1fd75",
+    "package": "umbtest03/dunning-ladder@sha-b4e9c71520d9",
     "input": {
       "invoice_status": "overdue",
       "aging_days": 15,
       "cadence_policy": {
-        "steps": [{"max_days": 7, "channel": "email"}, {"max_days": 21, "channel": "email"}, {"max_days": 45, "channel": "letter"}],
+        "steps": [
+          {
+            "max_days": 7,
+            "channel": "email"
+          },
+          {
+            "max_days": 21,
+            "channel": "email"
+          },
+          {
+            "max_days": 45,
+            "channel": "letter"
+          }
+        ],
         "cap": 3
       }
     },
-    "command": "runx skill umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy='...'",
-    "receipt_ref": "runx:receipt:sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
+    "command": "runx skill umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy='...'",
+    "receipt_ref": "runx:receipt:sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
     "verify_verdict": {
       "schema": "runx.verify_verdict.v1",
-      "receipt_id": "sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
+      "receipt_id": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
       "valid": false,
       "digest": {
         "status": "valid",
-        "expected": "sha256:5cff1d77118a618bee59d5d2a9d91e1af26b86e77c3b6dc72f3d0b7105a9b22a",
-        "actual": "sha256:5cff1d77118a618bee59d5d2a9d91e1af26b86e77c3b6dc72f3d0b7105a9b22a"
+        "expected": "sha256:db08a05d73b24949d66aee00f6959c3d4b0ebfe29cb5df78eabb278b60073543",
+        "actual": "sha256:db08a05d73b24949d66aee00f6959c3d4b0ebfe29cb5df78eabb278b60073543"
       },
       "content_address": {
         "status": "valid",
-        "expected": "sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
-        "actual": "sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e"
+        "expected": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
+        "actual": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498"
       },
       "signature": {
         "mode": "production",
@@ -87,8 +100,14 @@
     },
     "receipt_json_url": "https://raw.githubusercontent.com/umbtest03/dunning-ladder-evidence/main/receipt.json",
     "harness_cases": [
-      {"name": "within-cap-reminder", "status": "sealed"},
-      {"name": "cap-reached-escalate", "status": "failure"}
+      {
+        "name": "within-cap-reminder",
+        "status": "sealed"
+      },
+      {
+        "name": "cap-reached-escalate",
+        "status": "failure"
+      }
     ]
   }
 }
