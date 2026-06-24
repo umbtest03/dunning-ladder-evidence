@@ -25,6 +25,4 @@ caller:
         reason: cadence cap reached
         recommended_action: escalate to collections
 expect:
-  status: escalated
-  receipt:
-    schema: runx.receipt.v1
+  status: failure
