@@ -23,7 +23,7 @@
     {
       "check": "dogfood_evidence",
       "passed": true,
-      "detail": "Post-publish dogfood run with within-cap inputs produces sealed receipt sha256:10fe69f8. Verify output captured."
+      "detail": "Post-publish dogfood run with within-cap inputs produces sealed receipt sha256:610b8d05. Verify output captured."
     },
     {
       "check": "pr",
@@ -33,7 +33,7 @@
     {
       "check": "reproducibility",
       "passed": true,
-      "detail": "install_command: runx add umbtest03/dunning-ladder@sha-7a9d3f3dcabe --registry https://api.runx.ai"
+      "detail": "install_command: runx add umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai"
     }
   ]
 }

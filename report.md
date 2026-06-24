@@ -24,7 +24,7 @@ Published a governed dunning-ladder skill to the runx registry at umbtest03/dunn
 
 ## Artifacts
 
-- **Public URL:** https://runx.ai/x/umbtest03/dunning-ladder@sha-7a9d3f3dcabe
+- **Public URL:** https://runx.ai/x/umbtest03/dunning-ladder@sha-5a9176c1fd75
 - **Source URL:** https://github.com/umbtest03/runx/tree/f0673f6b/skills/dunning-ladder
 - **PR URL:** https://github.com/runxhq/runx/pull/139
 - **X.yaml:** https://raw.githubusercontent.com/umbtest03/runx/f0673f6b/skills/dunning-ladder/X.yaml
@@ -32,13 +32,13 @@ Published a governed dunning-ladder skill to the runx registry at umbtest03/dunn
 - **Evidence JSON:** https://raw.githubusercontent.com/umbtest03/dunning-ladder-evidence/main/evidence.json
 - **Verification JSON:** https://raw.githubusercontent.com/umbtest03/dunning-ladder-evidence/main/verification.json
 - **Receipt JSON:** https://raw.githubusercontent.com/umbtest03/dunning-ladder-evidence/main/receipt.json
-- **Receipt ref:** runx:receipt:sha256:10fe69f83519fbcf59a17c547c9affa074aa3af1933c2d12dab787386f1a9e8a
+- **Receipt ref:** runx:receipt:sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e
 
 ## Usage
 
 ```bash
-runx add umbtest03/dunning-ladder@sha-7a9d3f3dcabe --registry https://api.runx.ai
-runx skill umbtest03/dunning-ladder@sha-7a9d3f3dcabe --registry https://api.runx.ai \
+runx add umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai
+runx skill umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai \
   --input-json cadence_policy='{"steps":[{"max_days":7,"channel":"email"}],"cap":1}' \
   -i invoice_status=overdue -i aging_days=60
 ```

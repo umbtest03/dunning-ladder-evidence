@@ -4,15 +4,15 @@
     "Runx CLI version: runx-cli 0.6.13",
     "Publisher owner: umbtest03",
     "Package name: dunning-ladder",
-    "Version: sha-7a9d3f3dcabe",
+    "Version: sha-5a9176c1fd75",
     "Registry ref: https://runx.ai/x/umbtest03/dunning-ladder",
-    "Public URL: https://runx.ai/x/umbtest03/dunning-ladder@sha-7a9d3f3dcabe",
+    "Public URL: https://runx.ai/x/umbtest03/dunning-ladder@sha-5a9176c1fd75",
     "PR URL: https://github.com/runxhq/runx/pull/139",
     "Source URL: https://github.com/umbtest03/runx/tree/f0673f6b/skills/dunning-ladder",
     "Raw X.yaml: https://raw.githubusercontent.com/umbtest03/runx/f0673f6b/skills/dunning-ladder/X.yaml",
     "Raw SKILL.md: https://raw.githubusercontent.com/umbtest03/runx/f0673f6b/skills/dunning-ladder/SKILL.md",
     "Publish method: runx registry publish skills/dunning-ladder --profile X.yaml --registry https://api.runx.ai",
-    "Install command: runx add umbtest03/dunning-ladder@sha-7a9d3f3dcabe --registry https://api.runx.ai",
+    "Install command: runx add umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai",
     "",
     "=== HARNESS CASES ===",
     "Case 1: within-cap-reminder — sealed. Input: invoice_status=overdue, aging_days=15, cap=3, step=1. Output: reminder_proposal.channel=email. Chosen step is within cap, reminder sent.",
@@ -27,13 +27,13 @@
     "=== LOCAL HARNESS RESULT ===",
     "Status: passed",
     "Assertion errors: 0",
-    "Receipt IDs: sha256:57b2012f560d6564837fc1d6bbf60d58920942766dc026aee52c130dbfddd630 (sealed), cap-reached-escalate (failure, no receipt generated)",
+    "Receipt IDs: sha256:eb40ab99ac2e85876c21ba2b2550c80c67c90a4379c1151bbafff5d7435febc0 (sealed), sha256:db0e345dc3647a26826a36d56b56038815d320aa6c9899b67b5972e9efa4fb0a (failure)",
     "",
     "=== DOGFOOD (POST-PUBLISH) ===",
-    "Command: runx skill umbtest03/dunning-ladder@sha-7a9d3f3dcabe --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy=...",
+    "Command: runx skill umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy=...",
     "Status: sealed (exit 0)",
-    "Reminder channel: email, Content digest: sha256:3a34ea1e8201f06611091be7ced85480314390ea243f1a163480cc3768c5a499",
-    "Receipt ID: sha256:10fe69f83519fbcf59a17c547c9affa074aa3af1933c2d12dab787386f1a9e8a",
+    "Reminder channel: email, Content digest: sha256:f455f54584e797774955ecbff8c546b5bddf1e986032ff18a915753942088d9e",
+    "Receipt ID: sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
     "",
     "=== VERIFIER CHECKS ===",
     "github.repo_starred_by: umbtest03 has starred runxhq/runx (verified via GitHub API)",
@@ -43,7 +43,7 @@
     "Skill named dunning-ladder (exact required name)"
   ],
   "dogfood": {
-    "package": "umbtest03/dunning-ladder@sha-7a9d3f3dcabe",
+    "package": "umbtest03/dunning-ladder@sha-5a9176c1fd75",
     "input": {
       "invoice_status": "overdue",
       "aging_days": 15,
@@ -52,17 +52,38 @@
         "cap": 3
       }
     },
-    "command": "runx skill umbtest03/dunning-ladder@sha-7a9d3f3dcabe --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy='...'",
-    "receipt_ref": "runx:receipt:sha256:10fe69f83519fbcf59a17c547c9affa074aa3af1933c2d12dab787386f1a9e8a",
+    "command": "runx skill umbtest03/dunning-ladder@sha-5a9176c1fd75 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy='...'",
+    "receipt_ref": "runx:receipt:sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
     "verify_verdict": {
       "schema": "runx.verify_verdict.v1",
-      "receipt_id": "sha256:10fe69f83519fbcf59a17c547c9affa074aa3af1933c2d12dab787386f1a9e8a",
+      "receipt_id": "sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
       "valid": false,
-      "digest": {"status": "valid", "expected": "sha256:e9167cb71614f80ffaf36625521098118524d28b9e8f1784cae03a0c89946091", "actual": "sha256:e9167cb71614f80ffaf36625521098118524d28b9e8f1784cae03a0c89946091"},
-      "content_address": {"status": "valid", "expected": "sha256:10fe69f83519fbcf59a17c547c9affa074aa3af1933c2d12dab787386f1a9e8a", "actual": "sha256:10fe69f83519fbcf59a17c547c9affa074aa3af1933c2d12dab787386f1a9e8a"},
-      "signature": {"mode": "production", "status": "invalid", "kid": "runx-demo-key"},
-      "lineage": {"status": "unverified", "message": "single receipt verification cannot prove receipt-tree lineage"},
-      "findings": [{"code": "signature_key_hash_mismatch", "path": "issuer", "message": "issuer public key hash does not match the resolved verifier key"}]
+      "digest": {
+        "status": "valid",
+        "expected": "sha256:5cff1d77118a618bee59d5d2a9d91e1af26b86e77c3b6dc72f3d0b7105a9b22a",
+        "actual": "sha256:5cff1d77118a618bee59d5d2a9d91e1af26b86e77c3b6dc72f3d0b7105a9b22a"
+      },
+      "content_address": {
+        "status": "valid",
+        "expected": "sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e",
+        "actual": "sha256:610b8d05021ac3ef321cf588251bec879295c918bef9aed1dd26cec756c1ac0e"
+      },
+      "signature": {
+        "mode": "production",
+        "status": "invalid",
+        "kid": "runx-publish-harness-local"
+      },
+      "lineage": {
+        "status": "unverified",
+        "message": "single receipt verification cannot prove receipt-tree lineage"
+      },
+      "findings": [
+        {
+          "code": "signature_key_missing",
+          "path": "issuer",
+          "message": "signature verifier could not resolve the issuer key"
+        }
+      ]
     },
     "receipt_json_url": "https://raw.githubusercontent.com/umbtest03/dunning-ladder-evidence/main/receipt.json",
     "harness_cases": [
