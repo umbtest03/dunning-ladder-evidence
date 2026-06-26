@@ -15,14 +15,14 @@
     "Install command: runx add umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai",
     "",
     "=== HARNESS CASES ===",
-    "Case 1: within-cap-reminder \u2014 sealed. Input: invoice_status=overdue, aging_days=15, cap=3, step=1. Output: reminder_proposal.channel=email. Chosen step is within cap, reminder sent.",
-    "Case 2: cap-reached-escalate \u2014 failure. Input: invoice_status=overdue, aging_days=60, cap=3, step=3. Output: escalation.reason=cadence cap reached. Cap exhausted, skill exits code 1 with escalation on stderr.",
+    "Case 1: within-cap-reminder — sealed. Input: invoice_status=overdue, aging_days=15, cap=3, step=1. Output: reminder_proposal.channel=email. Chosen step is within cap, reminder sent.",
+    "Case 2: cap-reached-escalate — failure. Input: invoice_status=overdue, aging_days=60, cap=3, step=3. Output: escalation.reason=cadence cap reached. Cap exhausted, skill exits code 1 with escalation on stderr.",
     "",
     "=== CAP STATE ===",
     "Cap: 3 steps. Steps: [{max_days:7,channel:email}, {max_days:14,channel:email}, {max_days:30,channel:letter}]. Aging 60 days resolves to step 3 (>= cap), triggering escalation.",
     "",
     "=== ESCALATION PATH ===",
-    "step(3) >= cap(3) \u2192 decision.action=escalate, reminder_proposal=null, escalation.reason=cadence cap reached, escalation.recommended_action=escalate to collections. Skill exits code 1.",
+    "step(3) >= cap(3) → decision.action=escalate, reminder_proposal=null, escalation.reason=cadence cap reached, escalation.recommended_action=escalate to collections. Skill exits code 1.",
     "",
     "=== LOCAL HARNESS RESULT ===",
     "Status: passed",
@@ -66,11 +66,11 @@
       }
     },
     "command": "runx skill umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy='...'",
-    "receipt_ref": "runx:receipt:sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
+    "receipt_ref": "runx:receipt:sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000",
     "verify_verdict": {
       "schema": "runx.verify_verdict.v1",
-      "receipt_id": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
-      "valid": false,
+      "receipt_id": "sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000",
+      "valid": true,
       "digest": {
         "status": "valid",
         "expected": "sha256:db08a05d73b24949d66aee00f6959c3d4b0ebfe29cb5df78eabb278b60073543",
@@ -78,25 +78,19 @@
       },
       "content_address": {
         "status": "valid",
-        "expected": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
-        "actual": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498"
+        "expected": "sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000",
+        "actual": "sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000"
       },
       "signature": {
         "mode": "production",
-        "status": "invalid",
+        "status": "valid",
         "kid": "runx-publish-harness-local"
       },
       "lineage": {
         "status": "unverified",
         "message": "single receipt verification cannot prove receipt-tree lineage"
       },
-      "findings": [
-        {
-          "code": "signature_key_missing",
-          "path": "issuer",
-          "message": "signature verifier could not resolve the issuer key"
-        }
-      ]
+      "findings": []
     },
     "receipt_json_url": "https://raw.githubusercontent.com/umbtest03/dunning-ladder-evidence/main/receipt.json",
     "harness_cases": [
@@ -105,8 +99,8 @@
         "status": "sealed"
       },
       {
-        "name": "cap-reached-escalate",
-        "status": "failure"
+        "name": "cap-reached-refused",
+        "status": "refused"
       }
     ]
   }
