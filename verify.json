@@ -1,0 +1,31 @@
+{
+  "schema": "runx.verify_verdict.v1",
+  "receipt_id": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e",
+  "valid": false,
+  "digest": {
+    "status": "valid",
+    "expected": "sha256:8ec595c4a5af62eb5e3c38f5be9e5fc7a3bbec514e1d8dd70882e5021d9a1cdc",
+    "actual": "sha256:8ec595c4a5af62eb5e3c38f5be9e5fc7a3bbec514e1d8dd70882e5021d9a1cdc"
+  },
+  "content_address": {
+    "status": "valid",
+    "expected": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e",
+    "actual": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e"
+  },
+  "signature": {
+    "mode": "local-development",
+    "status": "invalid",
+    "kid": "verify-fast-test-key"
+  },
+  "lineage": {
+    "status": "unverified",
+    "message": "single receipt verification cannot prove receipt-tree lineage"
+  },
+  "findings": [
+    {
+      "code": "signature_malformed",
+      "path": "signature.value",
+      "message": "signature value is malformed"
+    }
+  ]
+}

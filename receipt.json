@@ -3,17 +3,17 @@
     {
       "artifact_refs": [],
       "closure": {
-        "closed_at": "2026-06-24T14:33:30.071Z",
-        "disposition": "closed",
+        "closed_at": "2026-06-29T07:25:00.794Z",
+        "disposition": "failed",
         "reason_code": "process_exit",
-        "summary": "cli-tool exited successfully"
+        "summary": "{\"decision\":{\"step\":3,\"action\":\"escalate\"},\"reminder_proposal\":null,\"escalation\":{\"reason\":\"cadence cap reached\",\"recommended_action\":\"escalate to collections\"}}\n"
       },
       "criterion_bindings": [
         {
           "criterion_id": "process_exit",
           "evidence_refs": [],
-          "status": "verified",
-          "summary": "cli-tool exited successfully",
+          "status": "failed",
+          "summary": "{\"decision\":{\"step\":3,\"action\":\"escalate\"},\"reminder_proposal\":null,\"escalation\":{\"reason\":\"cadence cap reached\",\"recommended_action\":\"escalate to collections\"}}\n",
           "verification_refs": []
         }
       ],
@@ -48,7 +48,7 @@
     },
     "authority_proof_refs": [],
     "enforcement": {
-      "profile_hash": "sha256:runtime-skeleton-enforcement",
+      "profile_hash": "sha256:635fdb0a7eef93911e3c6bd0b25b5e635edba32e0259133042b3a5f1fb19394e",
       "redaction_refs": [],
       "setup_refs": [],
       "teardown_refs": []
@@ -58,7 +58,7 @@
     "terms": []
   },
   "canonicalization": "runx.receipt.c14n.v1",
-  "created_at": "2026-06-24T14:33:30.071Z",
+  "created_at": "2026-06-29T07:25:00.794Z",
   "decisions": [
     {
       "artifact_refs": [],
@@ -86,17 +86,17 @@
       "selected_harness_ref": null
     }
   ],
-  "digest": "sha256:db08a05d73b24949d66aee00f6959c3d4b0ebfe29cb5df78eabb278b60073543",
-  "id": "sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498",
+  "digest": "sha256:8ec595c4a5af62eb5e3c38f5be9e5fc7a3bbec514e1d8dd70882e5021d9a1cdc",
+  "id": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e",
   "idempotency": {
-    "content_hash": "sha256:run_dunning_27656b0dd2ee-dunning-content",
-    "intent_key": "sha256:run_dunning_27656b0dd2ee-dunning-intent",
-    "trigger_fingerprint": "sha256:run_dunning_27656b0dd2ee-dunning-trigger"
+    "content_hash": "sha256:run_dunning_181241373076-dunning-content",
+    "intent_key": "sha256:run_dunning_181241373076-dunning-intent",
+    "trigger_fingerprint": "sha256:run_dunning_181241373076-dunning-trigger"
   },
   "issuer": {
-    "kid": "runx-publish-harness-local",
+    "kid": "verify-fast-test-key",
     "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f",
-    "type": "ci"
+    "type": "hosted"
   },
   "lineage": {
     "children": [],
@@ -104,32 +104,32 @@
   },
   "schema": "runx.receipt.v1",
   "seal": {
-    "closed_at": "2026-06-24T14:33:30.071Z",
+    "closed_at": "2026-06-29T07:25:00.794Z",
     "criteria": [
       {
         "criterion_id": "process_exit",
         "evidence_refs": [],
-        "status": "verified",
-        "summary": "cli-tool exited successfully",
+        "status": "failed",
+        "summary": "{\"decision\":{\"step\":3,\"action\":\"escalate\"},\"reminder_proposal\":null,\"escalation\":{\"reason\":\"cadence cap reached\",\"recommended_action\":\"escalate to collections\"}}\n",
         "verification_refs": []
       }
     ],
-    "disposition": "closed",
-    "last_observed_at": "2026-06-24T14:33:30.071Z",
-    "reason_code": "process_closed",
+    "disposition": "failed",
+    "last_observed_at": "2026-06-29T07:25:00.794Z",
+    "reason_code": "process_failed",
     "summary": "cli-tool dunning completed"
   },
   "signals": [],
   "signature": {
     "alg": "Ed25519",
-    "value": "base64:uLAKybauBBjwsScjf6h_Mg2LvIpis0qI8OSaUDUrtPoCp3A5UOoSgjnDUiYueJT_Ni6y-3oVAbSnufK0Q7ApBA"
+    "value": "base64:vErg7UXlJqIudakdUGlvD9x6XOJrtAgzpAQyrE20xp_MrRp-DpxG_ULeQymeRx729Hj48Sf2GKPR-TCdvvlRAA"
   },
   "subject": {
     "commitments": [],
     "kind": "skill",
     "ref": {
       "type": "harness",
-      "uri": "hrn_run_dunning_27656b0dd2ee_dunning"
+      "uri": "hrn_run_dunning_181241373076_dunning"
     }
   }
 }

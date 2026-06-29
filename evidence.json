@@ -15,14 +15,14 @@
     "Install command: runx add umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai",
     "",
     "=== HARNESS CASES ===",
-    "Case 1: within-cap-reminder — sealed. Input: invoice_status=overdue, aging_days=15, cap=3, step=1. Output: reminder_proposal.channel=email. Chosen step is within cap, reminder sent.",
-    "Case 2: cap-reached-escalate — failure. Input: invoice_status=overdue, aging_days=60, cap=3, step=3. Output: escalation.reason=cadence cap reached. Cap exhausted, skill exits code 1 with escalation on stderr.",
+    "Case 1: within-cap-reminder \u00e2\u20ac\u201d sealed. Input: invoice_status=overdue, aging_days=15, cap=3, step=1. Output: reminder_proposal.channel=email. Chosen step is within cap, reminder sent.",
+    "Case 2: cap-reached-escalate \u00e2\u20ac\u201d failure. Input: invoice_status=overdue, aging_days=60, cap=3, step=3. Output: escalation.reason=cadence cap reached. Cap exhausted, skill exits code 1 with escalation on stderr.",
     "",
     "=== CAP STATE ===",
     "Cap: 3 steps. Steps: [{max_days:7,channel:email}, {max_days:14,channel:email}, {max_days:30,channel:letter}]. Aging 60 days resolves to step 3 (>= cap), triggering escalation.",
     "",
     "=== ESCALATION PATH ===",
-    "step(3) >= cap(3) → decision.action=escalate, reminder_proposal=null, escalation.reason=cadence cap reached, escalation.recommended_action=escalate to collections. Skill exits code 1.",
+    "step(3) >= cap(3) \u00e2\u2020\u2019 decision.action=escalate, reminder_proposal=null, escalation.reason=cadence cap reached, escalation.recommended_action=escalate to collections. Skill exits code 1.",
     "",
     "=== LOCAL HARNESS RESULT ===",
     "Status: passed",
@@ -66,25 +66,25 @@
       }
     },
     "command": "runx skill umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai --json -i invoice_status=overdue -i aging_days=15 --input-json cadence_policy='...'",
-    "receipt_ref": "runx:receipt:sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000",
+    "receipt_ref": "runx:receipt:sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e",
     "verify_verdict": {
       "schema": "runx.verify_verdict.v1",
-      "receipt_id": "sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000",
+      "receipt_id": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e",
       "valid": true,
       "digest": {
         "status": "valid",
-        "expected": "sha256:db08a05d73b24949d66aee00f6959c3d4b0ebfe29cb5df78eabb278b60073543",
-        "actual": "sha256:db08a05d73b24949d66aee00f6959c3d4b0ebfe29cb5df78eabb278b60073543"
+        "expected": "sha256:8ec595c4a5af62eb5e3c38f5be9e5fc7a3bbec514e1d8dd70882e5021d9a1cdc",
+        "actual": "sha256:8ec595c4a5af62eb5e3c38f5be9e5fc7a3bbec514e1d8dd70882e5021d9a1cdc"
       },
       "content_address": {
         "status": "valid",
-        "expected": "sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000",
-        "actual": "sha256:b1e4b1f900000000000000000000000000000000000000000000000000000000"
+        "expected": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e",
+        "actual": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e"
       },
       "signature": {
-        "mode": "production",
+        "mode": "local-development",
         "status": "valid",
-        "kid": "runx-publish-harness-local"
+        "kid": "verify-fast-test-key"
       },
       "lineage": {
         "status": "unverified",

@@ -1,6 +1,6 @@
 name: cap-reached-escalate
 kind: skill
-target: .
+target: ..
 runner: dunning
 inputs:
   invoice_status: overdue

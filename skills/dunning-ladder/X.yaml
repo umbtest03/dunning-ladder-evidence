@@ -38,7 +38,7 @@ harness:
               channel: letter
           cap: 3
       expect:
-        status: refused
+        status: failure
 runners:
   dunning:
     default: true
