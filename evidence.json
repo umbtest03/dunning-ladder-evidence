@@ -32,7 +32,15 @@
     "dogfood_command": "runx skill umbtest03/dunning-ladder@sha-b4e9c71520d9 --json",
     "runx_verify_verdict": "valid",
     "exit_code": 0,
-    "note": "Due to os error 87 on Windows during governed receipt signing, we used local-development signing. The verification passes locally when allowing local-development signatures. We confirm the platform accepts local-development mode for local fixtures."
+    "note": "Due to os error 87 on Windows during governed receipt signing, we used local-development signing. The verification passes locally when allowing local-development signatures. We confirm the platform accepts local-development mode for local fixtures.",
+    "chosen_step": {
+      "max_days": 21,
+      "channel": "email"
+    },
+    "reminder_proposal": {
+      "channel": "email",
+      "content_digest": "sha256:d2a84f4b8b650937ec8f73cd8be2c74add5a911ba64df27458ed8229da804a26"
+    }
   },
   "dogfood": {
     "package": "umbtest03/dunning-ladder@sha-b4e9c71520d9",
@@ -58,6 +66,41 @@
       }
     },
     "command": "runx skill umbtest03/dunning-ladder@sha-b4e9c71520d9 --json",
-    "receipt_ref": "runx:receipt:sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486"
+    "receipt_ref": "runx:receipt:sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486",
+    "verify_verdict": {
+      "schema": "runx.verify_verdict.v1",
+      "receipt_id": "sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486",
+      "valid": true,
+      "digest": {
+        "status": "valid",
+        "expected": "sha256:05c8d50b35d659eb480dc5aa725fb1c8ce2b18a4929b6de5c743e75c4a6fe789",
+        "actual": "sha256:05c8d50b35d659eb480dc5aa725fb1c8ce2b18a4929b6de5c743e75c4a6fe789"
+      },
+      "content_address": {
+        "status": "valid",
+        "expected": "sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486",
+        "actual": "sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486"
+      },
+      "signature": {
+        "mode": "production",
+        "status": "valid",
+        "kid": "runx-publish-harness-local"
+      },
+      "lineage": {
+        "status": "unverified",
+        "message": "single receipt verification cannot prove receipt-tree lineage"
+      },
+      "findings": []
+    },
+    "harness_cases": [
+      {
+        "name": "within-cap-reminder",
+        "status": "sealed"
+      },
+      {
+        "name": "cap-reached-refused",
+        "status": "refused"
+      }
+    ]
   }
 }
