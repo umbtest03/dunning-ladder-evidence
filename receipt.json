@@ -3,17 +3,17 @@
     {
       "artifact_refs": [],
       "closure": {
-        "closed_at": "2026-06-29T07:25:00.794Z",
+        "closed_at": "2026-06-30T05:19:33.171Z",
         "disposition": "failed",
         "reason_code": "process_exit",
-        "summary": "{\"decision\":{\"step\":3,\"action\":\"escalate\"},\"reminder_proposal\":null,\"escalation\":{\"reason\":\"cadence cap reached\",\"recommended_action\":\"escalate to collections\"}}\n"
+        "summary": "Record is not overdue\n"
       },
       "criterion_bindings": [
         {
           "criterion_id": "process_exit",
           "evidence_refs": [],
           "status": "failed",
-          "summary": "{\"decision\":{\"step\":3,\"action\":\"escalate\"},\"reminder_proposal\":null,\"escalation\":{\"reason\":\"cadence cap reached\",\"recommended_action\":\"escalate to collections\"}}\n",
+          "summary": "Record is not overdue\n",
           "verification_refs": []
         }
       ],
@@ -58,7 +58,7 @@
     "terms": []
   },
   "canonicalization": "runx.receipt.c14n.v1",
-  "created_at": "2026-06-29T07:25:00.794Z",
+  "created_at": "2026-06-30T05:19:33.171Z",
   "decisions": [
     {
       "artifact_refs": [],
@@ -86,17 +86,17 @@
       "selected_harness_ref": null
     }
   ],
-  "digest": "sha256:8ec595c4a5af62eb5e3c38f5be9e5fc7a3bbec514e1d8dd70882e5021d9a1cdc",
-  "id": "sha256:20389a74fa0ecd6f83e23a12e61eb30cad22d9da93f70feb5841e3558f60a90e",
+  "digest": "sha256:05c8d50b35d659eb480dc5aa725fb1c8ce2b18a4929b6de5c743e75c4a6fe789",
+  "id": "sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486",
   "idempotency": {
-    "content_hash": "sha256:run_dunning_181241373076-dunning-content",
-    "intent_key": "sha256:run_dunning_181241373076-dunning-intent",
-    "trigger_fingerprint": "sha256:run_dunning_181241373076-dunning-trigger"
+    "content_hash": "sha256:run_dunning_44136fa355b3-dunning-content",
+    "intent_key": "sha256:run_dunning_44136fa355b3-dunning-intent",
+    "trigger_fingerprint": "sha256:run_dunning_44136fa355b3-dunning-trigger"
   },
   "issuer": {
-    "kid": "verify-fast-test-key",
-    "public_key_sha256": "sha256:3097e2dee2cb4a34b53840cdb705aed71067c36f68db0e0f559c3f3fa043315f",
-    "type": "hosted"
+    "kid": "runx-publish-harness-local",
+    "public_key_sha256": "sha256:e879bd84f17d14ecd78facb07f682fe2396e7a2e418bfffa0dedf800d52e7134",
+    "type": "ci"
   },
   "lineage": {
     "children": [],
@@ -104,32 +104,32 @@
   },
   "schema": "runx.receipt.v1",
   "seal": {
-    "closed_at": "2026-06-29T07:25:00.794Z",
+    "closed_at": "2026-06-30T05:19:33.171Z",
     "criteria": [
       {
         "criterion_id": "process_exit",
         "evidence_refs": [],
         "status": "failed",
-        "summary": "{\"decision\":{\"step\":3,\"action\":\"escalate\"},\"reminder_proposal\":null,\"escalation\":{\"reason\":\"cadence cap reached\",\"recommended_action\":\"escalate to collections\"}}\n",
+        "summary": "Record is not overdue\n",
         "verification_refs": []
       }
     ],
     "disposition": "failed",
-    "last_observed_at": "2026-06-29T07:25:00.794Z",
+    "last_observed_at": "2026-06-30T05:19:33.171Z",
     "reason_code": "process_failed",
     "summary": "cli-tool dunning completed"
   },
   "signals": [],
   "signature": {
     "alg": "Ed25519",
-    "value": "base64:vErg7UXlJqIudakdUGlvD9x6XOJrtAgzpAQyrE20xp_MrRp-DpxG_ULeQymeRx729Hj48Sf2GKPR-TCdvvlRAA"
+    "value": "base64:0e0FgkuwP4VxwoBw9X9t7SIXRAl9niuzswVaAGHP93DvEUdHU9PY_xE-zIzoAbCY0k8VygvTSUCU5-RmJCgBDA"
   },
   "subject": {
     "commitments": [],
     "kind": "skill",
     "ref": {
       "type": "harness",
-      "uri": "hrn_run_dunning_181241373076_dunning"
+      "uri": "hrn_run_dunning_44136fa355b3_dunning"
     }
   }
 }

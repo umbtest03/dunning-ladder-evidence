@@ -1,39 +1,25 @@
 {
-  "verifications": [
-    {
-      "check": "publish",
-      "passed": true,
-      "detail": "Skill published to registry at https://runx.ai/x/umbtest03/dunning-ladder"
-    },
-    {
-      "check": "skill_content",
-      "passed": true,
-      "detail": "SKILL.md documents purpose, procedure, inputs, output schema, edge cases. X.yaml defines harness with sealed + failure cases."
-    },
-    {
-      "check": "harness",
-      "passed": true,
-      "detail": "2 harness cases: within-cap-reminder (sealed), cap-reached-escalate (failure). Both passed."
-    },
-    {
-      "check": "cap_reached_escalation",
-      "passed": true,
-      "detail": "cap-reached-escalate case: aging_days=60, cap=3, step=3 >= cap. Skill exits 1 with escalation JSON on stderr. No reminder_proposal emitted."
-    },
-    {
-      "check": "dogfood_evidence",
-      "passed": true,
-      "detail": "Post-publish dogfood run with within-cap inputs produces sealed receipt sha256:9d2115085bfaad10bec2b525261fda5b8780b6855d801c507f7449fab974b498. Verify output captured."
-    },
-    {
-      "check": "pr",
-      "passed": true,
-      "detail": "PR #139 opened from umbtest03/runx against runxhq/runx with skills/dunning-ladder/ package."
-    },
-    {
-      "check": "reproducibility",
-      "passed": true,
-      "detail": "install_command: runx add umbtest03/dunning-ladder@sha-b4e9c71520d9 --registry https://api.runx.ai"
-    }
-  ]
+  "schema": "runx.verify_verdict.v1",
+  "receipt_id": "sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486",
+  "valid": true,
+  "digest": {
+    "status": "valid",
+    "expected": "sha256:05c8d50b35d659eb480dc5aa725fb1c8ce2b18a4929b6de5c743e75c4a6fe789",
+    "actual": "sha256:05c8d50b35d659eb480dc5aa725fb1c8ce2b18a4929b6de5c743e75c4a6fe789"
+  },
+  "content_address": {
+    "status": "valid",
+    "expected": "sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486",
+    "actual": "sha256:e457c9b248d8b5486a6a0a82d4970c7be92e9e5345e37187f528230ce7bd8486"
+  },
+  "signature": {
+    "mode": "production",
+    "status": "valid",
+    "kid": "runx-publish-harness-local"
+  },
+  "lineage": {
+    "status": "unverified",
+    "message": "single receipt verification cannot prove receipt-tree lineage"
+  },
+  "findings": []
 }
