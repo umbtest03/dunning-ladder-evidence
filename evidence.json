@@ -100,7 +100,7 @@
       },
       {
         "name": "cap-reached-refused",
-        "status": "refused"
+        "status": "escalated"
       }
     ]
   }
